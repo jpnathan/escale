@@ -1,0 +1,43 @@
+<div class="row col-12" style="margin-left:0px; margin-right:0px">
+    <div class="col-3">
+        <div class="form-group" style="margin:10px">
+            <label for="search"><h5><strong> Search </strong></h5></label>
+            {{input type="email" value=searchText class="form-control" id="search" placeholder="Language or Name"}}
+            <small class="form-text text-muted">Search for repos by language or name.</small>
+        </div>
+        <div class="custom-control custom-checkbox">
+            <label for="starsFilter"></label>
+            {{input type="checkbox" checked=hasStars class="custom-control-input" id="starsFilter"}}
+            <label class="custom-control-label" for="starsFilter"><h5><strong> Stars </strong></h5></label>
+        </div>
+        <div class="custom-control custom-checkbox">
+            <label for="starsFilter"></label>
+            {{input type="checkbox" checked=openIssues class="custom-control-input" id="issuesFilter"}}
+            <label class="custom-control-label" for="issuesFilter"><h5><strong> Open Issues </strong></h5></label>
+        </div>
+    </div>
+    <div class="col-9">
+        {{#each filteredRepos as |repo| }}
+            <div class="card">
+                <div class="card-header text-primary">
+                    <strong>
+                        {{repo.name}}
+                    </strong>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Language:</strong> {{repo.language}}</h5>
+                    <p class="card-text">{{repo.description}}</p>
+                    <p>
+                        <span class="card-text"><strong>Created at:</strong> {{repo.created_at}}</span><br>
+                        <span class="card-text"><strong>Pushed at:</strong> {{repo.pushed_at}}</span><br>
+                        <span class="card-text text-warning"><b>Stars:</b>{{star-rating repo.stargazers_count}}</span><br>
+                        <span class="card-text text-success"><strong>Open Issues:</strong> {{repo.open_issues_count}}</span><br>
+                    </p>
+                    <a href={{repo.clone_url}} class="btn btn-primary">Clone</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+{{outlet}}

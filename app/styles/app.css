@@ -1,0 +1,21 @@
+.card {
+    margin: 10px !important;
+    max-width: 350px;
+    min-width: 350px !important;
+}
+
+.card-header {
+    text-transform: uppercase;
+}
+
+.checkbox-filter {
+    padding: 15px
+}
+
+.card {
+    display:inline-block !important;
+}
+
+.nav {
+    height: 15% !important
+}
