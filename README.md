@@ -1,7 +1,6 @@
 # escale
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+A simple test to get the repos of a github username and filter by **name**, **language**, **stars** and **open issues**.
 
 ## Prerequisites
 
@@ -14,7 +13,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone` [this repository](https://github.com/jpnathan/escale.git)
 * `cd escale`
 * `npm install`
 
